@@ -1,10 +1,9 @@
-package Goroutines
+package Golang_Goroutines
 
 import (
 	"fmt"
 	"sync"
 	"testing"
-	"time"
 )
 
 func Asyncronous(group *sync.WaitGroup) {
@@ -13,7 +12,6 @@ func Asyncronous(group *sync.WaitGroup) {
 	group.Add(1)
 
 	fmt.Println("hello")
-	time.Sleep(2 * time.Second)
 }
 
 func TestWaitGroup(t *testing.T) {
@@ -24,5 +22,5 @@ func TestWaitGroup(t *testing.T) {
 	}
 	group.Wait()
 	fmt.Println("All Done !")
-	
+
 }

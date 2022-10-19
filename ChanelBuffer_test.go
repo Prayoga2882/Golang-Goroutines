@@ -1,4 +1,4 @@
-package Goroutines
+package Golang_Goroutines
 
 import (
 	"fmt"
@@ -10,7 +10,7 @@ func TestChanelBuffer(t *testing.T) {
 	chanel := make(chan string, 2)
 	defer close(chanel)
 
-	chanel <- "Prayoga Boeduhartoyo" // mengirim chanel harus menggunakan goroutine biar gak deadlock
+	chanel <- "Prayoga Boedihartoyo" // chanel is how the goroutine communication
 
 	data := <-chanel
 

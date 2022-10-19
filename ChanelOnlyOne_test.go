@@ -1,4 +1,4 @@
-package Goroutines
+package Golang_Goroutines
 
 import (
 	"fmt"
@@ -24,5 +24,5 @@ func TestOnlyOne(t *testing.T) {
 		}()
 	}
 	group.Wait()
-	fmt.Println("Goroutines running... : ", counter)
+	fmt.Println("Golang-Goroutines running... : ", counter)
 }

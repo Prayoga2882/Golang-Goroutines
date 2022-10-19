@@ -1,4 +1,4 @@
-package Goroutines
+package Golang_Goroutines
 
 import (
 	"fmt"
@@ -28,7 +28,7 @@ func (account *BankAccount) GetBalance() int {
 func TestRWmutex(t *testing.T) {
 	account := BankAccount{}
 	x := 0
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10; i++ {
 		go func() {
 			for j := 0; j < 10; j++ {
 				account.AddBalance(1)

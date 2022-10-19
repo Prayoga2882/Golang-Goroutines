@@ -1,4 +1,4 @@
-package Goroutines
+package Golang_Goroutines
 
 import (
 	"fmt"
@@ -19,4 +19,23 @@ func TestChannel(t *testing.T) {
 	data := <-chanelPengirim
 	fmt.Println(data)
 	time.Sleep(5 * time.Second)
+}
+
+func TestGo(t *testing.T) {
+	chanel := make(chan string)
+	//defer close(chanel)
+
+	go sender(chanel, "melvin sending data")
+	go reciever(chanel)
+	fmt.Println("all done")
+	time.Sleep(3 * time.Second)
+}
+
+func sender(chanel chan string, value string) {
+	chanel <- value
+}
+
+func reciever(chanel chan string) {
+	data := <-chanel
+	fmt.Println("success receive data from chanel\n", data)
 }
