@@ -26,7 +26,7 @@ func TestGo(t *testing.T) {
 	//defer close(chanel)
 
 	go sender(chanel, "melvin sending data")
-	go reciever(chanel)
+	go receiver(chanel)
 	fmt.Println("all done")
 	time.Sleep(3 * time.Second)
 }
@@ -35,7 +35,7 @@ func sender(chanel chan string, value string) {
 	chanel <- value
 }
 
-func reciever(chanel chan string) {
+func receiver(chanel chan string) {
 	data := <-chanel
 	fmt.Println("success receive data from chanel\n", data)
 }
